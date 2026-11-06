@@ -16,20 +16,27 @@ pub struct HelloWorld;
 impl HelloWorld {
     /// Store a greeting string in the contract's storage.
     pub fn set_greeting(env: Env, greeting: Symbol) {
-        env.storage().instance().set(&symbol_short!("greeting"), &greeting);
+        env.storage()
+            .instance()
+            .set(&symbol_short!("greeting"), &greeting);
     }
 
     /// Retrieve the stored greeting, or return "Hello" if none is set.
     pub fn get_greeting(env: Env) -> Symbol {
         env.storage()
-            .instance
+            .instance()
             .get(&symbol_short!("greeting"))
             .unwrap_or(symbol_short!("Hello"))
     }
 
     /// Return a list of contract names planned for this workspace.
     pub fn contract_list(env: Env) -> Vec<Symbol> {
-        vec![&env, symbol_short!("DAO"), symbol_short!("Cert"), symbol_short!("Token")]
+        vec![
+            &env,
+            symbol_short!("DAO"),
+            symbol_short!("Cert"),
+            symbol_short!("Token"),
+        ]
     }
 }
 
