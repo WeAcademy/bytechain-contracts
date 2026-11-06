@@ -1,0 +1,11 @@
+# Rust / Cargo
+/target/
+**/target/
+
+# Soroban CLI build output
+/contracts/**/target/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
