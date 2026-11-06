@@ -1,11 +1,21 @@
-# Rust / Cargo
-/target/
-**/target/
+# Rust
+/target
+**/*.rs.bk
 
-# Soroban CLI build output
-/contracts/**/target/
+# Soroban / Stellar CLI local state
+.soroban/
+.stellar/
 
-# Editor and OS files
+# Node (packages/ts-bindings)
+node_modules/
+packages/*/dist/
+packages/*/coverage/
+
+# Generated contract bindings (regenerate with scripts/generate-bindings.sh)
+packages/ts-bindings/bindings/
+
+# Editors and OS
 .DS_Store
 .idea/
 .vscode/
+*.swp
